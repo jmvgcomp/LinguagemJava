@@ -1,6 +1,7 @@
 package Functional.Functions.program;
 
 import Functional.Functions.entities.Product;
+import Functional.Functions.util.ProductService;
 import Functional.Functions.util.UpperCaseName;
 
 import java.util.ArrayList;
@@ -31,5 +32,11 @@ public class Program {
                 collect(Collectors.toList());
 
         names.forEach(System.out::println);
+
+        //Calcule a soma dos preços somente dos produtos cujo nome começa com "T"
+        ProductService ps = new ProductService();
+
+        double sum = ps.filteredSum(list, p -> p.getName().charAt(0) == 'T');
+        System.out.println("Sum ="+String.format("%.2f", sum));
     }
 }
