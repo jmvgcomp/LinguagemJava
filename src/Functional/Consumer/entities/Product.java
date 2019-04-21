@@ -29,6 +29,7 @@ public class Product{
     public static double staticProductConsumer(Product p){
         return p.getPrice() * 1.1;
     }
+
     public double noStaticProductConsumer(){
         return price * 1.1;
     }

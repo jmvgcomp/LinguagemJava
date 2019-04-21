@@ -11,6 +11,7 @@ import java.util.function.Consumer;
 public class Program {
     public static void main(String[] args) {
         //Adicionar 10% no valor de cada produto.
+
         Locale.setDefault(Locale.US);
         List<Product> list = new ArrayList<>();
 

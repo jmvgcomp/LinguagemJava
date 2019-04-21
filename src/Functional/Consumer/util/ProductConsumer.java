@@ -7,7 +7,6 @@ import java.util.function.Predicate;
 
 public class ProductConsumer implements Consumer<Product> {
 
-
     @Override
     public void accept(Product p) {
         p.setPrice(p.getPrice() * 1.1);
