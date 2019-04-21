@@ -1,6 +1,7 @@
 package Functional.Comparable.entities;
 
-public class Product implements Comparable<Product>{
+
+public class Product{
     private String name;
     private Double price;
 
@@ -30,8 +31,5 @@ public class Product implements Comparable<Product>{
         return "Name: "+name+", Price: "+price;
     }
 
-    @Override
-    public int compareTo(Product p) {
-        return name.toUpperCase().compareTo(p.getName().toUpperCase());
-    }
+
 }
