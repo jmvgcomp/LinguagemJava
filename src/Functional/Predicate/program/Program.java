@@ -20,10 +20,11 @@ public class Program {
         list.add(new Product("Mouse", 50.00));
         list.add(new Product("HD CASE", 80.90));
 
-        //recebe um predicate
-        //list.removeIf(p -> p.getPrice() >= 100);
-        // ou
-        list.removeIf(new ProductPredicate());
+        //aceita também a referencia do método estático (Method Reference)
+        //list.removeIf(Product::staticProductPredicate);
+
+        //aceita também a referencia do método não-estático (Method Reference)
+        list.removeIf(Product::noStaticProductPredicate);
 
         for (Product p : list){
             System.out.println(p);
