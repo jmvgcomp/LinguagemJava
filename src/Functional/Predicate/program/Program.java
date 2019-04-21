@@ -4,8 +4,8 @@ import Functional.Predicate.entities.Product;
 import Functional.Predicate.util.ProductPredicate;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Program {
     public static void main(String[] args) {
@@ -20,11 +20,16 @@ public class Program {
         list.add(new Product("Mouse", 50.00));
         list.add(new Product("HD CASE", 80.90));
 
-        //aceita também a referencia do método estático (Method Reference)
-        //list.removeIf(Product::staticProductPredicate);
+        //vantagem é passar um valor parametrizado ex:
+        double min  = 100.0;
+        /*
+        Predicate<Product> pred = p -> p.getPrice() >= min;
+        list.removeIf(pred);
 
-        //aceita também a referencia do método não-estático (Method Reference)
-        list.removeIf(Product::noStaticProductPredicate);
+        ou
+         */
+        list.removeIf(p->p.getPrice() >= min);
+
 
         for (Product p : list){
             System.out.println(p);
